@@ -1,9 +1,11 @@
-﻿* {
+﻿@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded');
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    font-family: Lato;
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
     font-size: 18px;
     line-height: 1.2;
     text-decoration: none;
@@ -22,6 +24,7 @@ body {
     width: 100%;
     height: 50px;
     z-index: 6;
+    align-items: center;
 }
 
 #listaNav {
@@ -38,7 +41,7 @@ body {
     font-weight: bold;
 }
 
-#listaNav li a, #logo {
+.linkNav, #logo {
     line-height: 50px;
     color: #0093F5;
 }
@@ -59,7 +62,100 @@ body {
     transition: .1s;
 }
 
-
-#inicio {
-
+#menu_icono {
+    height: 48px;
+    margin-right: 10px;
+    filter: invert(100%);
+    float: right;
+    display: none;
+    transition: opacity .2s ease;
 }
+
+#check{
+    display: none;
+}
+
+@media (width >= 650px) and (width < 750px) {
+    #logo, .linkNav {
+        font-size: 16px;
+    }
+}
+
+@media (width <= 300px) {
+    #logo {
+        display: none;
+    }
+
+    .linkNav {
+        font-size: 16px;
+        padding: 5vh 15%;
+        border-radius: 10px;
+    }
+
+    #listaNav {
+        height: 100%;
+        display: none;
+        padding-top: 15vh;
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #menu_icono {
+        display: block;
+    }
+
+    #check:checked ~ #listaNav {
+        display: block;
+    }
+
+    #listaNav li {
+        display: block;
+        height: 15vh;
+    }
+}
+
+@media (width < 650px ) and (width > 300px) {
+
+    #menu_icono {
+        display: block;
+    }
+
+    #listaNav {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        background: #0A2733;
+        text-align: center;
+        padding-top: 15vh;
+        margin-right: 0;
+        transition: all .5s;
+        display: none;
+    }
+
+    #listaNav li{
+        display: block;
+        height: 15vh;
+        justify-content :center;
+    }
+
+    .linkNav {
+        font-size: 25px;
+        padding: 5vh 15%;
+        border-radius: 10px;
+    }
+
+    #barraNav{
+        
+    }
+
+    #logo{
+        width: 100%;
+    }
+
+    #check:checked ~ #listaNav {
+        display: block;
+    }
+}
+
+

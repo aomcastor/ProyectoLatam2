@@ -1,10 +1,19 @@
-let btn = document.getElementsByClassName("linkNav");
-btn.addEventListener("click", moverBtnArriba);
-btn.addEventListener("mouseleave", moverBtnAbajo);
+checkBox = document.getElementById("check");
+menuIcon = document.getElementById("menu_icono");
+let imagenAlternar = false;
 
-function moverBtnArriba() {
-    btn.style.color = "red";
-}
-function moverBtnAbajo() {
-    btn.style.top = "0";
-}
+menuIcon.addEventListener("click", function () {
+    checkBox.checked = !checkBox.checked;
+});
+
+menuIcon.addEventListener("click", function () {
+    if (imagenAlternar) {
+        menuIcon.src = "resources/menu_icon.ico";
+    }
+    else {
+        menuIcon.src = "resources/exit_icon.ico";
+    }
+
+    imagenAlternar = !imagenAlternar;
+
+});
