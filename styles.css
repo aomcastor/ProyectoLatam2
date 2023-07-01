@@ -62,22 +62,18 @@ body {
     color: #021927;
     transition: .1s;
 }
-#logo:active {
+#logo:hover {
     color: #F1FFFA;
     transition: 1.0s;
 }
 
-#menu_icono {
+#menu_icono, #check {
     height: 48px;
     margin-right: 10px;
     filter: invert(100%);
     float: right;
     display: none;
     transition: opacity .2s ease;
-}
-
-#check{
-    display: none;
 }
 
 section {
@@ -108,11 +104,11 @@ p, h1, h2{
 }
 
 h1{
-    font-size: 25px;
+    font-size: 48px;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 32px;
 }
 
 p{
@@ -125,12 +121,20 @@ button {
     border: none;
     text-decoration: none;
     border-radius: 10px;
+    width: 300px;
     padding: 12px 28px;
     box-shadow: 0px 0px 10px 2px #598392;
     margin: 10px 0;
 }
 button a {
     color: #0093F5;
+}
+button:hover{
+    background: #F1FFFA;
+}
+button:hover{
+    transition: 2s;
+    transition-duration: 1s;
 }
 
 #foto {
@@ -141,12 +145,12 @@ button a {
 }
 
 #secInicio {
-    padding:15% 5% 10% 5%;
+    padding:12% 5% 10% 5%;
     flex-direction: row;
     text-align: center;
 }
 
-#secContact{
+#secContact, #secProyecto{
     text-align: center;
     margin: 0;
     padding: 0;
@@ -217,7 +221,6 @@ button a {
 
     #listaNav {
         height: 100%;
-        width: 100%;
         position: fixed;
         display: none;
         padding-top: 15vh;
@@ -239,12 +242,11 @@ button a {
 
     #secInicio {
         padding-top: 20%;
-        display: flex;
         flex-direction: column;
         align-content: center;
     }
 
-    #secInicio article {
+    #secInicio article, #listaNav {
         width: 100%;
     }
 
@@ -280,10 +282,6 @@ button a {
         border-radius: 10px;
     }
 
-    #logo {
-        width: 100%;
-    }
-
     #check:checked ~ #listaNav {
         display: block;
     }
@@ -298,7 +296,7 @@ button a {
         align-content: center;
     }
 
-    #secInicio article {
+    #secInicio article, #logo {
         width: 100%;
     }
 }
